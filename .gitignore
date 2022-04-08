@@ -114,5 +114,4 @@ gradle-app.setting
 .project
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
-
-# End of https://www.toptal.com/developers/gitignore/api/gradle,intellij+all
+.DS_Store
