@@ -21,7 +21,7 @@ public class Movie {
 
     //1인당 예매요금 계산
     public Money calculateMovieFee(Screening screening) {
-        return fee.minus(discountPolicy.calculateDiscountAmount(screening));
+         return fee.minus(discountPolicy.calculateDiscountAmount(screening));
     }
 
     public void changeDiscountPolicy(DiscountPolicy discountPolicy) {
