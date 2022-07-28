@@ -7,7 +7,6 @@ import java.util.List;
 public abstract class DefaultDiscountPolicy implements DiscountPolicy{
     private List<DiscountCondition> conditions;
 
-
     public DefaultDiscountPolicy(DiscountCondition... conditions) {
         this.conditions = Arrays.asList(conditions);
     }
