@@ -11,6 +11,22 @@ public class DiscountCondition {
     private LocalTime startTime;
     private LocalTime endTime;
 
+    //기간할인 조건여부 를 확인하는 메서드
+    public boolean isDiscountable(DayOfWeek dayOfWeek, LocalTime time) {
+        if (this.type != DiscountConditionType.PERIOD) {
+            throw new IllegalArgumentException();
+        }
+        return this.dayOfWeek.equals(dayOfWeek) && this.startTime.compareTo(time) <= 0 && this.endTime.compareTo(time) >= 0;
+    }
+
+    //순번할인 조건 여부를 확인하는 메서드
+    public boolean isDiscountable(int sequence) {
+        if (this.type != DiscountConditionType.SEQENCE) {
+            throw new IllegalArgumentException();
+        }
+        return this.sequence == sequence;
+    }
+
     public DiscountConditionType getType() {
         return type;
     }
